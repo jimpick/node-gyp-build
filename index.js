@@ -4,8 +4,8 @@ var os = require('os')
 
 var abi = process.versions.modules // TODO: support old node where this is undef
 var runtime = isElectron() ? 'electron' : 'node'
-var arch = os.arch()
-var platform = os.platform()
+var arch = process.env.npm_config_arch ? process.env.npm_config_arch : os.arch()
+var platform = process.env.npm_config_platform ? process.env.npm_config_platform : os.platform()
 
 module.exports = load
 
