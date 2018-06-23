@@ -4,7 +4,7 @@ var proc = require('child_process')
 var os = require('os')
 
 proc.exec('node-gyp-build-test', function (err) {
-  // if (err) preinstall()
+  if (err) preinstall()
 })
 
 function build () {
